@@ -25,6 +25,23 @@ main.pdf: $(SOURCE)
 	makeindex -gs index.format -o main.snd main.sdx 
 	xelatex -shell-escape main
 
+check-index:
+	xelatex -shell-escape main
+	sed -i.backup s/.*\\emph.*// main.adx #remove titles which biblatex puts into the name index
+# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
+# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
+# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.ldx
+	sed -i.backup 's/\\MakeCapital //g' main.adx
+	python3 fixindex.py
+	mv mainmod.adx main.adx
+	footnotes-index.pl main.ldx
+	footnotes-index.pl main.sdx
+	footnotes-index.pl main.adx 
+	makeindex -o main.and main.adx
+	makeindex -gs index.format -o main.lnd main.ldx
+	makeindex -gs index.format -o main.snd main.sdx 
+	xelatex -shell-escape main
+
 stable.pdf: main.pdf
 	cp main.pdf stable.pdf
 	cp collection_tmp.bib chapters/collection.bib
