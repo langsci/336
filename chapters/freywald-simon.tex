@@ -1,0 +1,54 @@
+%% -*- coding:utf-8 -*-
+
+\documentclass[output=paper
+  ,nobabel
+  ,draftmode
+  ,colorlinks, citecolor=brown
+]{langscibook}
+
+
+\IfFileExists{../localcommands.tex}{%hack to check whether this is being compiled as part of a collection or standalone
+   \input{../localpackages}
+   \input{../localcommands}
+   \input{../localhyphenation}
+    \bibliography{localbibliography}
+    \togglepaper[23]
+}{}
+
+
+\title{Anarchy in grammar?} 
+
+\author{Ulrike Freywald\orcid{0000-0003-3268-7874}\affiliation{TU Dortmund} \lastand Horst J. Simon\orcid{0000-0002-6367-2969}\affiliation{Freie Universität Berlin}}
+% \chapterDOI{} %will be filled in at production
+
+% \epigram{}
+
+\abstract{
+}
+
+
+\begin{document}
+
+\maketitle
+
+This chapter was supposed to contain the introduction to this volume, which contains the papers of a
+workshop held at the Freie Universität Berlin in May 2017. We think that all the papers are great, stand
+for themselves and an introduction is not really necessary. Well, to be honest, we would have loved
+to have an introduction here, but due to all these terrible events in the past five years, we did
+not really manage to put one together.
+
+We hope to be able to add more content to this chapter in the second edition. For now it is more
+important to get the book out.
+
+%\section*{\acknowledgmentsUS}
+
+
+{\sloppy
+\printbibliography[heading=subbibliography,notkeyword=this]
+}
+\end{document}
+
+
+
+% en
+%      <!-- Local IspellDict: en_US-w_accents -->
