@@ -1,3 +1,4 @@
+Low German
 AAVE
 Age
 Albanian
@@ -5,7 +6,6 @@ Amazonia
 Amir
 Andr
 Australian
-Aziz
 Basia
 Basic
 Basque
@@ -28,7 +28,6 @@ Dargwa
 Dutch
 Editio
 English
-European
 Farruk
 French
 Georgian
@@ -37,7 +36,6 @@ Germanic
 Gothic
 Hij
 Hittite
-Indo-European
 Italian
 Italic
 Janitscharn
@@ -67,4 +65,3 @@ Spanish
 Swedish
 Turkish
 Udi
-Vernacular
