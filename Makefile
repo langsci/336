@@ -54,6 +54,7 @@ cover: FORCE
 
 # ggrep is gnu grep, needed on a Mac since Apple broke the -P option.
 # use brew install grep to install it
+# Then call python3 autoindex.py
 languagecandidates:
 	ggrep -ohP "(?<=[a-z]|[0-9])(\))?(,)? (\()?[A-Z]['a-zA-Z-]+" chapters/*tex| grep -o  [A-Z].* |sort -u >languagelist.txt
 
@@ -134,7 +135,7 @@ clean:
 	*.adx *.and *.idx *.ind *.ldx *.lnd *.sdx *.snd *.rdx *.rnd *.wdx *.wnd \
 	*.log *.blg *.bcf *.aux.copy *.auxlock *.ilg \
 	*.aux *.toc *.cut *.out *.tpm *.bbl *-blx.bib *_tmp.bib \
-	*.glg *.glo *.gls *.wrd *.wdv *.xdv *.mw *.clr \
+	*.glg *.glo *.gls *.wrd *.wdv *.xdv *.mw *.clr *.thm \
 	*.run.xml \
 	chapters/*.aux chapters/*.auxlock chapters/*.aux.copy chapters/*.old chapters/*~ chapters/*.bak chapters/*.backup chapters/*.blg\
 	chapters/*.log chapters/*.out chapters/*.mw chapters/*.ldx  chapters/*.bbl chapters/*.bcf chapters/*.run.xml\
