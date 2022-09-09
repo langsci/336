@@ -28,7 +28,8 @@
 \input{localhyphenation.tex}
 \input{localcommands.tex}
 
-\bibliography{bib-abbr,stmue,localbibliography,sources}
+\bibliography{bib-abbr,fs,biblio-xdata-en,stmue,localbibliography,sources}
+
 
 %\bibliography{bib-abbr,biblio,localbibliography,sources}
 
@@ -37,6 +38,8 @@
 %%%             Frontmatter                      %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\includeonly{chapters/preface}
+\includeonly{chapters/freywald-simon}
 %\includeonly{chapters/lander}
 %\includeonly{chapters/salzmann}
 %\includeonly{chapters/mueller}
@@ -44,7 +47,7 @@
 %\includeonly{chapters/korth}
 
 %\includeonly{chapters/haider}
-\includeonly{chapters/raffelsiefen}
+%\includeonly{chapters/raffelsiefen}
 %\includeonly{chapters/noel}
 %\includeonly{chapters/buecker}
 
@@ -62,7 +65,7 @@
 {\sloppy\tableofcontents}
 
 %% sections without authors
-%\include{chapters/preface}
+\include{chapters/preface}
 %\include{chapters/acknowledgments}
 
 % %% Additional prefaces and/or introductions that also have authors
@@ -99,7 +102,9 @@
 \includepaper{chapters/noel}
 \includepaper{chapters/buecker}
 
-\part{Abolishing heads}
+%\part{Abolishing heads}
+\part{Doing without heads}
+
 
 \includepaper{chapters/nolda}
 
