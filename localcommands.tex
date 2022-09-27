@@ -161,11 +161,27 @@ collection.bib}
 % This does a linebreak for \gll for long sentences leaving space for the language at the right
 % margin. The factor .0989 is needed since otherwise starred examples cause a linebreak.
 % St.Mü. 17.06.2021 08.02.2021
-\newcommand{\longexampleandlanguage}[2]{%
-%\begin{tabularx}{.99\linewidth}[t]{@{}X@{}p{\widthof{(#2)}}@{}}%
-%\begin{minipage}[t]{.99\linewidth}%
-\begin{tabularx}{\linewidth}[t]{@{}X@{}p{\widthof{(#2)}}@{}}%
-\begin{minipage}[t]{\linewidth}%
-#1%
-\end{minipage} & (\ili{#2})%
-\end{tabularx}}
+% \newcommand{\longexampleandlanguage}[2]{%
+% %\begin{tabularx}{.99\linewidth}[t]{@{}X@{}p{\widthof{(#2)}}@{}}%
+% %\begin{minipage}[t]{.99\linewidth}%
+% \begin{tabularx}{\linewidth}[t]{@{}X@{}p{\widthof{(#2)}}@{}}%
+% \begin{minipage}[t]{\linewidth}%
+% #1%
+% \end{minipage} & (\ili{#2})%
+% \end{tabularx}}
+
+
+% From stackexchange:
+% https://tex.stackexchange.com/questions/600695/limiting-space-used-by-gb4e-and-adding-language-information-to-the-right/649414#649414
+\newcommand{\longexampleandlanguage}[2]{
+%\begin{tabularx}{\linewidth}[t]{@{}X@{}p{\widthof{(#2)}}@{}}
+\begin{minipage}[t]{\linewidth-1em-\widthof{(#2)}}
+#1
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{\widthof{(#2)}}
+ (\ili{#2})
+\end{minipage}
+%\end{tabularx}
+}
+
