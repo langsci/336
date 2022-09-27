@@ -169,3 +169,11 @@ collection.bib}
 #1%
 \end{minipage} & (\ili{#2})%
 \end{tabularx}}
+
+% ORCIDs in langsci-affiliations 
+\usepackage{orcidlink}
+\definecolor{orcidlogocol}{cmyk}{0,0,0,1}
+\ProvideDocumentCommand{\LinkToORCIDinAffiliations}{ +m }
+  {%
+    \orcidlink{#1}
+  }
