@@ -1,8 +1,9 @@
 \documentclass[output=paper,colorlinks,citecolor=black,
-\ChapterDOI{10.5281/zenodo.7142664}
 % hidelinks,
 % showindex
 ]{langscibook}
+
+\ChapterDOI{10.5281/zenodo.7142664}
 
 \IfFileExists{../localcommands.tex}{%hack to check whether this is being compiled as part of a collection or standalone
    \input{../localpackages}
@@ -44,7 +45,7 @@ in the tree diagram in Figure~\ref{fig-dp-the-book}, has been very successful. I
   \citet{Vater:1991:DeterminantienDP} for proponents of the DP-hypothesis; interestingly, the earliest mention of the idea that D is the head can already be found in  \citet[280]{Erben:1980:DeutscheGrammatikAbriss12}.}
 
 \begin{figure}
-\Tree [.DP [.XP ] [.D$'$ D\\the NP\\book ]]
+\Tree [.DP [.XP ] [.D\rlap{$'$} D\\the NP\\book ]]
 \caption{DP-hypothesis}\label{fig-dp-the-book}	 
 \end{figure}
 Against this background it is somewhat surprising that most of the evidence in its favor is based on theory-internal considerations, either having to do with specific assumptions within GP-theory at the time or presumed parallels between the nominal and clausal structure. Arguments that refer to established concepts of headedness are actually rather rare and have not played a prominent role in the discussion. This paper therefore aims to address this issue by discussing a number of widely-accepted concepts of headedness and applying them to the NP vs. DP-debate. It will be shown that while some of the concepts do not lead to a conclusive result, some actually make clear predictions and help tease apart the two different theories. As we will see, facts from selection and agreement favor the DP-hypothesis, while none of the diagnostics favors the NP-hypothesis. Overall, then, the DP-hypothesis is at an advantage.
@@ -80,7 +81,7 @@ only project one specifier (\citealt[288-297]{Abney:1987:Diss}). Since both the 
 possessor have to occupy specifier positions of N, analyzing the previous example as in Figure~\ref{fig-np-johns-every-secret-wish} was not an option:
 
 \begin{figure}
-	\Tree [.NP [.XP\\John's ] [.N$'$ Det\\every [.N$'$ ZP\\secret N$'$\\wish ]	]]
+	\Tree [.NP [.XP\\John's ] [.N\rlap{$'$} Det\\every [.N\rlap{$'$} ZP\\secret N\rlap{$'$}\\wish ]	]]
 \caption{Co-occurrence of possessor and determiner under the NP-hypothesis}\label{fig-np-johns-every-secret-wish}
 	\end{figure}
 	
@@ -89,7 +90,7 @@ while the determiner is in the D-position. The respective structure is given in
   Figure~\ref{fig-dp-johns-every-secret-wish}.
 	
 \begin{figure}
-\Tree [.DP [.XP\\John's ] [.D$'$ D\\every [.NP [.ZP\\secret ] N$'$\\wish ]]]
+\Tree [.DP [.XP\\John's ] [.D\rlap{$'$} D\\every [.NP [.ZP\\secret ] N\rlap{$'$}\\wish ]]]
 \caption{Co-occurrence of possessor and determiner under the DP-hypothesis}
 \label{fig-dp-johns-every-secret-wish}
 \end{figure}
@@ -184,7 +185,7 @@ It is difficult to apply the criterion to the noun phrase, though. \citet{Brueni
 \end{subfigure}
   \begin{subfigure}{.48\textwidth}
     \centering
- {\Tree [.NP Det [.\sout{N$'$}  ]]}
+ {\Tree [.NP Det [.\sout{N\rlap{$'$}}  ]]}
 \end{subfigure}
 \caption{Pronouns under the DP- and NP-hypothesis}\label{fig-determiner-overt}
 \end{figure}
@@ -351,12 +352,12 @@ Given that the features of the head of the noun phrase are present on the maxima
 \begin{figure}
 \begin{subfigure}{.48\textwidth}
 \centering
- { v + \Tree [.DP \textcolor{gray}{XP} [.D$'$ D [.\textcolor{gray}{NP} ]]] 
+ { v + \Tree [.DP \textcolor{gray}{XP} [.D\rlap{$'$} D [.\textcolor{gray}{NP} ]]] 
 	} 
 \end{subfigure}
 \begin{subfigure}{.48\textwidth}
 \centering
-{v + \Tree [.NP \textcolor{gray}{DetP} [.N$'$ N ]]
+{v + \Tree [.NP \textcolor{gray}{DetP} [.N\rlap{$'$} N ]]
 	}
 \end{subfigure}
 \caption{Minimality under the DP- and NP-hypothesis}\label{fig-agreement-np-dp}
