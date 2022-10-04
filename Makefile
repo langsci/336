@@ -70,6 +70,8 @@ stmue-install:
 
 
 
+
+
 # the index is irrelevant so I removed index creation here
 prepublish.pdf: $(SOURCE) prepublish.tex
 	xelatex -no-pdf -shell-escape prepublish
