@@ -215,8 +215,8 @@
 	\newfontfamily\cn
 	  [
 	    Scale=MatchLowercase,
-	    BoldFont=SourceHanSerif-Bold.otf
-Path=fonts/
+	    BoldFont=SourceHanSerif-Bold.otf,
+        Path=fonts/
       ]
       {SourceHanSerif-Regular.otf}
     \AdditionalFontImprint{Source Han Serif ZH}
