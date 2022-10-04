@@ -1544,6 +1544,8 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 \usepackage[
 	natbib=true,
 	style=langsci-unified,
+	citestyle=langsci-unified,
+	datamodel=langsci,   % add authauthor and autheditor as possible fields to bibtex entries
 	%refsection=chapter,
 	maxbibnames=99,
 	uniquename=false,
@@ -1555,6 +1557,35 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 	backend=\lsBiblatexBackend,
 	indexing=cite
 ]{biblatex}
+
+% If the user provided a shortauthor in the bibtex entry, we use the authentic author (as with the
+% authorindex package) if it is defined, otherwise we use the author.
+% This gets F/T as shorthand right and puts the guys in the index.
+
+\renewbibmacro*{citeindex}{%
+  \ifciteindex
+    {\iffieldequalstr{labelnamesource}{shortauthor} % If biblatex uses shortauthor as the label of a bibitem
+      {\ifnameundef{authauthor}                     % we check whether there is something in authauthor
+        {\indexnames{author}}                       % if not, we use author
+        {\indexnames{authauthor}}}                  % if yes, we use authauthor
+      {\iffieldequalstr{labelnamesource}{author}    % if biblatex uses author we similarly test for
+                                                    % authauthor and use this field
+        {\ifnameundef{authauthor}% if defined use authauthor
+          {\indexnames{author}}
+          {\indexnames{authauthor}}} % if defined use this field
+% same for editor
+        {\iffieldequalstr{labelnamesource}{shorteditor} % If biblatex uses shorteditor as the label of a bibitem
+          {\ifnameundef{autheditor}                     % we check whether there is something in autheditor
+            {\indexnames{editor}}                       % if not, we use editor
+            {\indexnames{autheditor}}}                  % if yes, we use autheditor
+          {\iffieldequalstr{labelnamesource}{editor}    % if biblatex uses editor we similarly test for
+                                                        % auteditor and use this field
+            {\ifnameundef{autheditor}% if defined use autheditor
+              {\indexnames{editor}}
+              {\indexnames{autheditor}}}} % if defined use this field
+          {\indexnames{labelname}}}}}               % as a fallback we index on whatever biblatex used.
+    {}}
+
 
 %% DOIs are handled after hyperref.
 \defbibheading{references}{\chapter{References}\sloppy}
