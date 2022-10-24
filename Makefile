@@ -1,15 +1,16 @@
 STYLE-PATH= ${HOME}/Library/texmf/tex/latex/
 SOURCE=  main.tex $(wildcard local*.tex) $(wildcard chapters/*.tex) localbibliography.bib stmue.bib \
 langscibook.cls 
+OPTIONS=-output-driver="xdvipdfmx -i dvipdfmx-unsafe.cfg -q -E"
 
 #langsci-unified.bbx langsci-forest-setup.sty
 
 
 
 main.pdf: $(SOURCE)
-	xelatex -shell-escape main
+	xelatex -shell-escape $(OPTIONS) main
 	biber main
-	xelatex -shell-escape main
+	xelatex -shell-escape $(OPTIONS) main
 	sed -i.backup s/.*\\emph.*// main.adx #remove titles which biblatex puts into the name index
 # sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
 # sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
@@ -23,10 +24,10 @@ main.pdf: $(SOURCE)
 	makeindex -o main.and main.adx
 	makeindex -gs index.format -o main.lnd main.ldx
 	makeindex -gs index.format -o main.snd main.sdx 
-	xelatex -shell-escape main
+	xelatex -shell-escape $(OPTIONS) main
 
 check-index:
-	xelatex -shell-escape main
+	xelatex -shell-escape $(OPTIONS) main
 	sed -i.backup s/.*\\emph.*// main.adx #remove titles which biblatex puts into the name index
 # sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
 # sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx
@@ -40,7 +41,7 @@ check-index:
 	makeindex -o main.and main.adx
 	makeindex -gs index.format -o main.lnd main.ldx
 	makeindex -gs index.format -o main.snd main.sdx 
-	xelatex -shell-escape main
+	xelatex -shell-escape $(OPTIONS) main
 
 stable.pdf: main.pdf
 	cp main.pdf stable.pdf
